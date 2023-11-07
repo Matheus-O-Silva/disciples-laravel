@@ -18,10 +18,10 @@ class DisciplineController extends Controller
     {
         $discipline = Discipline::find($id);
         if($discipline) {
-            return response()->json(['status' => 200, 'student' => $discipline]);
+            return response()->json(['status' => 200, 'discipline' => $discipline]);
         }
 
-        return response()->json(['status' => 404, 'message' => 'Student Not Found']);
+        return response()->json(['status' => 404, 'message' => 'Discipline Not Found']);
     }
 
     public function updateDiscipline(Request $request, $id)
@@ -41,7 +41,7 @@ class DisciplineController extends Controller
         $discipline = Discipline::find($id);
 
         if($discipline) {
-           
+
             $discipline->name = $request->input('name');
             $discipline->update();
 
@@ -51,7 +51,7 @@ class DisciplineController extends Controller
 
             return response()->json(['status' => 404, 'message' => 'Discipline Not Found']);
         }
-        
+
     }
 
     public function deleteDiscipline($id)
@@ -59,7 +59,7 @@ class DisciplineController extends Controller
         $discipline = Discipline::find($id);
 
         if($discipline) {
-           
+
             $discipline->delete();
 
             return response()->json(['status' => 200, 'message' => 'Discipline Deleted Successfully']);

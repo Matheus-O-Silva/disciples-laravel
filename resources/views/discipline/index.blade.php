@@ -227,7 +227,7 @@
                             $('#success_message').addClass('alert alert-danger');
                             $('#success_message').text(response.message);
                         } else {
-                            $('#edit_name').val(response.student.name);
+                            $('#edit_name').val(response.discipline.name);
                             $('#stud_id').val(stud_id);
                         }
                     }
